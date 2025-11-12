@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Results</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-users"></i>
+            Group Allocation Results
+        </div>
+        <div class="nav-actions">
+            <button onclick="exportPDF()" class="btn-secondary">
+                <i class="fas fa-file-pdf"></i> Export PDF
+            </button>
+            <button onclick="exportCSV()" class="btn-secondary">
+                <i class="fas fa-file-csv"></i> Export CSV
+            </button>
+            <button onclick="logout()" class="btn-logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="results-header">
+            <h1>Group Allocation Results</h1>
+            <div class="stats">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <h3 id="totalGroups">0</h3>
+                        <p>Total Groups</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-user-graduate"></i>
+                    <div>
+                        <h3 id="totalStudents">0</h3>
+                        <p>Students Allocated</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="groupsDisplay" class="groups-grid"></div>
+    </div>
+
+    <script src="js/groups.js"></script>
+</body>
+</html>

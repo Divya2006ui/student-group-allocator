@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="register-card">
+            <div class="card-header">
+                <i class="fas fa-user-plus"></i>
+                <h1>Student Registration</h1>
+                <p>Join the group allocation system</p>
+            </div>
+            
+            <form id="registerForm" class="register-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name:</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name:</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="rollNumber">Roll Number:</label>
+                        <input type="text" id="rollNumber" name="rollNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="skills">Skills (comma-separated):</label>
+                    <input type="text" id="skills" name="skills" placeholder="Java, Python, Web Development, etc." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="interests">Project Interests:</label>
+                    <textarea id="interests" name="interests" rows="3" placeholder="Describe your project interests..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">
+                    <i class="fas fa-user-check"></i> Register
+                </button>
+            </form>
+            
+            <div class="card-footer">
+                <p>Already registered? <a href="index.html">Login here</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Creating account...</p>
+    </div>
+    
+    <script src="js/register.js"></script>
+</body>
+</html>
