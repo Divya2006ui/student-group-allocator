@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-users-cog"></i>
+            Admin Dashboard
+        </div>
+        <button onclick="logout()" class="btn-logout">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </nav>
+
+    <div class="dashboard">
+        <div class="sidebar">
+            <ul class="nav-menu">
+                <li><a href="#students" onclick="showSection('students')" class="active">
+                    <i class="fas fa-user-graduate"></i> Students
+                </a></li>
+                <li><a href="#groups" onclick="showSection('groups')">
+                    <i class="fas fa-users"></i> Groups
+                </a></li>
+                <li><a href="#allocate" onclick="showSection('allocate')">
+                    <i class="fas fa-random"></i> Allocate
+                </a></li>
+            </ul>
+        </div>
+
+        <div class="main-content">
+            <div id="students" class="section active">
+                <h2>Student Management</h2>
+                <div class="controls">
+                    <input type="text" id="searchStudents" placeholder="Search students..." onkeyup="searchStudents()">
+                    <button onclick="loadStudents()" class="btn-primary">Refresh</button>
+                </div>
+                <div id="studentsTable"></div>
+            </div>
+
+            <div id="groups" class="section">
+                <h2>Group Management</h2>
+                <div id="groupsContainer"></div>
+            </div>
+
+            <div id="allocate" class="section">
+                <h2>Group Allocation</h2>
+                <div class="allocation-form">
+                    <div class="form-group">
+                        <label>Allocation Method:</label>
+                        <select id="allocationMethod">
+                            <option value="random">Random</option>
+                            <option value="skills">Skill-based</option>
+                            <option value="interests">Interest-based</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Group Size:</label>
+                        <input type="number" id="groupSize" value="4" min="2" max="10">
+                    </div>
+                    <button onclick="allocateGroups()" class="btn-primary">
+                        <i class="fas fa-magic"></i> Allocate Groups
+                    </button>
+                </div>
+                <div id="allocationProgress" class="progress-container" style="display:none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <p>Allocating groups...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
